@@ -1,0 +1,96 @@
+.book-list-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  max-width: 1000px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.autor{
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100px;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ver-detalles {
+  margin-top: 15px;
+  padding: 8px 12px;
+  background-color: #bdbebe;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.ver-detalles:hover {
+  background-color: #828385;
+}
+
+.carro {
+  margin-top: 15px;
+  padding: 8px 12px;
+  background-color: #bdbebe;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.carro:hover {
+  background-color: #828385;
+}
+
+.cargando{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.botones{
+  gap: 30px;
+}
