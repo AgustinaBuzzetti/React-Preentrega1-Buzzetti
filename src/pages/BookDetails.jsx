@@ -4,7 +4,6 @@ import './BookDetails.css';
 
 const BookDetails = () => {
   const { bookId } = useParams();
-  const cleanBookId = bookId.replace('/works/', '');
   const [bookDetails, setBookDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +11,7 @@ const BookDetails = () => {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await fetch(`https://openlibrary.org/works/${cleanBookId}.json`);
+        const response = await fetch(`https://openlibrary.org/works/${bookId}.json`);
         const data = await response.json();
         console.log(data);
         setBookDetails(data);
@@ -24,7 +23,7 @@ const BookDetails = () => {
     };
 
     fetchBookDetails();
-  }, [cleanBookId]);
+  }, [bookId]);
 
   if (loading) return <p>Cargando detalles del libro...</p>;
   if (error) return <p>{error}</p>;
@@ -49,3 +48,5 @@ const BookDetails = () => {
 };
 
 export default BookDetails;
+
+

@@ -23,7 +23,7 @@ const NavBar = () => {
           <div className="d-flex w-100 justify-content-between">
             <div className="navbar-nav mx-auto mb-5">
               <Link className="nav-link active" to="/">Inicio</Link>
-              <Link className="nav-link" to="/productos">Sobre Nosotros</Link>
+              <Link className="nav-link" to="/sobre-nosotros">Sobre Nosotros</Link>
               <Link className="nav-link" to="/contacto">Contacto</Link>
             </div>
           </div>

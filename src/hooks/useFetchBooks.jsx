@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase/config';
 
 function useFetchBooks() {
   const [books, setBooks] = useState([]);
@@ -9,11 +11,14 @@ function useFetchBooks() {
     const fetchBooks = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://openlibrary.org/subjects/science_fiction.json?limit=10');
-        const data = await response.json();
-        setBooks(data.works);
+        const querySnapshot = await getDocs(collection(db, 'books'));
+        const booksData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setBooks(booksData);
       } catch (err) {
-        setError('Ocurrió un error al cargar los libros.');
+        setError('Error al cargar los libros');
       } finally {
         setLoading(false);
       }
@@ -26,5 +31,3 @@ function useFetchBooks() {
 }
 
 export default useFetchBooks;
-
-
